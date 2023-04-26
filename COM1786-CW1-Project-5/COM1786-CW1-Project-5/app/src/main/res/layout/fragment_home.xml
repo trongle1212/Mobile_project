@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    android:background="@color/white"
+    tools:context="com.example.comp1786cw1project3.feature.homepage.HomeFragment">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnSearch"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_search"
+        android:background="@color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTrips"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/btnSearch"
+        app:layout_constraintBottom_toTopOf="@id/lnButton"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_trip"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lnButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddNewTrip"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:text="@string/add_trip"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:textSize="23sp"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toTopOf="@id/btnReset"
+            app:tint="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnReset"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="@string/reset"
+            android:textAllCaps="false"
+            android:textColor="@color/red"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="20sp"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
